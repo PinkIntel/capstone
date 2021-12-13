@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/icon_only.png">
+    <title>The Wandering Photographer</title>
+</head>
+<body>
+
+    <div id="main content">
+
+
+        <div class="contactus-image">
+        </div>
+
+        <div class="main">
+            <h1>Contact Us</h1>
+            <h4>Got a question for us? Or just want to say hello? We'd love to hear from you!</h4>
+        </div>
+
+        <div id ="contact-form">
+            <div id="form-elements">
+                <form action="https://formspree.io/f/mknynrol" method="POST">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" placeholder="Full Name" />
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="janedoe@email.com" />
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone:</label>
+                        <input type="tel" name="phone" id="phone" />
+                    </div>
+                    <div>
+                        <label for="msg">Enter your message:</label>
+                        <br>
+                        <textarea name="msg" id="msg" cols="50" rows="10"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="marketing">How did you hear about us?</label>
+                        <select name="marketing" id="marketing">
+
+                            <option value="social">Social Media (FB, Twitter, Instagram)</option>
+                            <option value="github">Online Portfolio (GitHub)</option>
+                            <option value="search">Search Engine</option>
+                            <option value="email">Email</option>
+                            </optgroup>
+                            <option value="referral">Personal referral</option>
+                            </optgroup>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <hr>
+</body>
+
+
+<script src="main.js"></script>
+</html>
