@@ -1,3 +1,12 @@
+import html from "html-literal";
+import seniorPortrait from "/assets/christian-ferrer-aK5Dt6L6_hQ-unsplash.jpg";
+import flowerGirl from "/assets/james-resly-_H5Tnj7e1hc-unsplash.jpg";
+import weddingCouple from "/assets/nyana-stoica-MYGWB1KpwBQ-unsplash.jpg";
+import familyPhoto from "/assets/nathan-dumlao-4_mJ1TbMK8A-unsplash.jpg";
+import businessMan from "/assets/pexels-liliana-drew-8555509.jpg";
+import momAndSon from "/assets/paige-cody-bOVZ_f3fbQM-unsplash.jpg";
+import smallFamily from "/assets/jessica-rockowitz-6c4Uhhe68yQ-unsplash.jpeg";
+
 export default () => `
 <div id="main-content">
 
@@ -19,13 +28,13 @@ export default () => `
 
 <div class="gallery">
     <ul>
-        <li><img src="/assets/christian-ferrer-aK5Dt6L6_hQ-unsplash.jpg" alt="image of a girl with brown hair, smiling, and surrounded by bushes" height="300"></li>
-        <li><img src="/assets/james-resly-_H5Tnj7e1hc-unsplash.jpg" alt="image of a girl black hair, smiling, and with a sunflower crown" height="300"></li>
-        <li><img src="/assets/nyana-stoica-MYGWB1KpwBQ-unsplash.jpg" alt="bride and groom standing on a balcony, looking out in the distance" height="300"></li>
-        <li><img src="/assets/nathan-dumlao-4_mJ1TbMK8A-unsplash.jpg" alt="image of a family in a field of orange flowers" height="300"></li>
-        <li><img src="/assets/pexels-liliana-drew-8555509.jpg" alt="image of a man in a suit, smiling at the camera" height="300"></li>
-        <li><img src="/assets/paige-cody-bOVZ_f3fbQM-unsplash.jpg" alt="image of a mother and son, sitting on a couch" height="300"></li>
-        <li><img src="/assets/jessica-rockowitz-6c4Uhhe68yQ-unsplash.jpeg" alt="image of a husband and wife, holding a baby" height="300"></li>
+        <li><img src="${seniorPortrait}" alt="image of a girl with brown hair, smiling, and surrounded by bushes" height="300"></li>
+        <li><img src="${flowerGirl}" " alt="image of a girl black hair, smiling, and with a sunflower crown" height="300"></li>
+        <li><img src="${weddingCouple}" alt="bride and groom standing on a balcony, looking out in the distance" height="300"></li>
+        <li><img src="${familyPhoto}" alt="image of a family in a field of orange flowers" height="300"></li>
+        <li><img src="${businessMan}" alt="image of a man in a suit, smiling at the camera" height="300"></li>
+        <li><img src="${momAndSon}" alt="image of a mother and son, sitting on a couch" height="300"></li>
+        <li><img src="${smallFamily}" alt="image of a husband and wife, holding a baby" height="300"></li>
     </ul>
 </div>
 
