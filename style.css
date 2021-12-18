@@ -32,7 +32,7 @@ ul {
     position: fixed;
     height: 20%;
     width: 100%;
-    opacity: 100%;
+    z-index: 500;
 }
 
 nav {
@@ -465,11 +465,6 @@ footer a {
 
     .navigation li {
         margin: 5px;
-
-    }
-
-    .navigation-bar {
-        opacity:70%;
 
     }
 
