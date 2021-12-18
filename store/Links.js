@@ -2,9 +2,9 @@ export default [
   { title: "Home", text: "HOME" },
   { title: "About", text: "ABOUT" },
   { title: "Sessions", text: "SESSIONS" },
-  { title: "Packages", text: "PACKAGES" },
+  { title: "Booking", text: "BOOK A SESSION" },
   { title: "Contact", text: "CONTACT" },
-  { title: "ShoppingCart", text: "SHOPPING CART" }
+  { title: "Cart", text: "SHOPPING CART" }
 ];
 
 // export default [

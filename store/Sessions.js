@@ -1,4 +1,4 @@
 export default {
-  header: "Sessions",
+  header: "Sessions Page",
   view: "Sessions"
 };

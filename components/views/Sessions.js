@@ -1,6 +1,8 @@
 import html from "html-literal";
-export default () => `
-<h1>Sessions</h1>
-<p> put a sessions here pls thx</p>
-<hr>
+export default () => html`
+  <div class="sessions-image"></div>
+
+  <h1>Sessions</h1>
+  <p>Page unavailable. Please come back later!</p>
+  <hr />
 `;

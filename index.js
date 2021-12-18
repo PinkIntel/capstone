@@ -28,13 +28,13 @@ function render(st) {
 
 render(state.Home);
 
-document.querySelector(".fa-bars").addEventListener("click", () => {
-  document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-});
-
 router
   .on({
     "/": () => render(state.Home),
     ":page": params => render(state[capitalize(params.page)])
   })
   .resolve();
+
+document.querySelector(".fa-bars").addEventListener("click", () => {
+  document.querySelector("nav > ul").classList.toggle("hidden--mobile");
+});

@@ -151,6 +151,26 @@ nav {
     background-color: white;
 }
 
+.sessions-image {
+    background-image: url("/assets/yuri-tasso-RjCs9ywcnz8-unsplash.jpeg");
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    padding: 100px;
+    background-color: white;
+    background-position-y: 40%;
+}
+
+.packages-image {
+    background-image: url("/assets/christian-ferrer-aK5Dt6L6_hQ-unsplash.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    padding: 100px;
+    background-color: white;
+    background-position-y: 30%;
+}
+
 .booksession-image {
     background-image: url("/assets/nathan-dumlao-4_mJ1TbMK8A-unsplash.jpg");
     background-size: cover;
@@ -190,6 +210,7 @@ nav {
     position: relative;
     background-color: #386C66;
     padding: 5%;
+    z-index: -10;
 }
 .gallerysection h2 {
     text-align: center;

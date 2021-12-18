@@ -1,7 +1,7 @@
 import html from "html-literal";
 export default () => html`
-  <div class="packages-image"></div>
-  <h1>Packages</h1>
+  <div class="sessions-image"></div>
+  <h1>Shopping Cart</h1>
   <p>Page unavailable! Please come back later!</p>
   <hr />
 `;

@@ -1,8 +1,10 @@
 import html from "html-literal";
-export default () => `
-    <div id="main content">
+export default () => html`
+
+   <div id="main content">
         <div class="contactus-image">
         </div>
+
 
         <div class="main">
             <h1>Contact Us</h1>
@@ -56,5 +58,5 @@ export default () => `
 
     </div>
 
-    <hr>
+    <hr/>
 `;
