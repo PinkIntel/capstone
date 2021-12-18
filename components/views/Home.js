@@ -81,7 +81,7 @@ export default () => html`
 
     <div id="session-button">
       <h4>INTERESTED IN HIRING US?</h4>
-      <a href="booksession.html"><p>BOOK A SESSION</p></a>
+      <a href="/Booking"><p>BOOK A SESSION</p></a>
     </div>
   </div>
 

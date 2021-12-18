@@ -5,7 +5,7 @@ import facebookIcon from "/assets/facebook_svg.svg";
 import instagramIcon from "/assets/instagram_svg.svg";
 import twitterIcon from "/assets/twitter_svg.svg";
 
-export default (st) => `
+export default st => `
 <footer>
     <div class="footer">
       <div class="footer-left">
