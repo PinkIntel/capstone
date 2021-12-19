@@ -8,8 +8,13 @@ import { Nav, Main, Footer } from "./components";
 import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
+import { createClient } from "pexels";
 
 const router = new Navigo(window.location.origin);
+
+const client = createClient(
+  "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
+);
 
 //in the PAGE part of the router function, the colon is for the info that comes after the / symbol in your browswer bar. It's a query string to add on to the slash.
 
@@ -28,13 +33,36 @@ function render(st) {
 
 render(state.Home);
 
+document.querySelector(".fa-bars").addEventListener("click", () => {
+  document.querySelector("nav > ul").classList.toggle("hidden--mobile");
+});
+
+const galleryContainer = document.querySelector(".gallerycontainer");
+let pexels;
+function getPhotos(images) {
+  images.map(image => {
+    pexels = `<div class="gallery_images">
+             <img src=${image.src.original} />
+        </div>`;
+    galleryContainer.innerHTML += pexels;
+  });
+}
+
+fetch("https://api.pexels.com/v1/collections/gtwusmq/", {
+  headers: {
+    Authorization: "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
+  }
+})
+  .then(resp => {
+    return resp.json();
+  })
+  .then(data => {
+    console.log(data);
+  });
+
 router
   .on({
     "/": () => render(state.Home),
     ":page": params => render(state[capitalize(params.page)])
   })
   .resolve();
-
-document.querySelector(".fa-bars").addEventListener("click", () => {
-  document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-});

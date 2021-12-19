@@ -9,7 +9,9 @@ export default st => `
 <footer>
     <div class="footer">
       <div class="footer-left">
+
       <p>
+          <br>Capstone by Julliette Huynh &copy; 2021
           <br>The Wandering Photographer
           <br> 1234 Creative Ave.
           <br>Sunnyville, CA 90210
@@ -18,9 +20,10 @@ export default st => `
 
       <div class="footer-middle">
           <p>
-              <br>Julliette Huynh &copy; 2021
               <br><a href="https://julliettehuynh.myportfolio.com" target="_blank">Check out my portfolio!</a>
-              <br><a href="https://fontawesome.com/v5.15/icons/bars?style=solid" target="_blank">Hamburger icon credit</a>
+              <br><a href="https://fontawesome.com/v5.15/icons/bars?style=solid" target="_blank">Hamburger icon</a>
+              <br><a href="https://www.pexels.com/api/" target="_blank">API Photos provided by Pexels</a>
+              <br><a href="https://www.unsplash.com/" target="_blank">Other photos provided by Unsplash</a>
           </p>
           </div>
 

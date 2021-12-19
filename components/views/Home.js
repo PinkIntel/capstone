@@ -79,6 +79,14 @@ export default () => html`
       </ul>
     </div>
 
+    <div class="gallerycontainer">
+      <div class="gallery_images">
+        <img src="" />
+
+        <h1>This is a gallery from Pexels</h1>
+      </div>
+    </div>
+
     <div id="session-button">
       <h4>INTERESTED IN HIRING US?</h4>
       <a href="/Booking"><p>BOOK A SESSION</p></a>
