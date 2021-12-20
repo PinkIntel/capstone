@@ -46,15 +46,12 @@ dotenv.config();
 // });
 function getGallery() {
   axios
-    .get(
-      "https://api.pexels.com/v1/collections/gtwusmq/?appid=${process.env.563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0}",
-      {
-        headers: {
-          Authorization:
-            "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
-        }
+    .get("https://api.pexels.com/v1/collections/gtwusmq/", {
+      headers: {
+        Authorization:
+          "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
       }
-    )
+    })
     .then(response => {
       let result = response.data.media;
 
