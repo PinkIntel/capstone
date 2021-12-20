@@ -76,15 +76,8 @@ export default () => html`
             height="300"
           />
         </li>
+        <li><div class="galleryContainer"></div></li>
       </ul>
-    </div>
-
-    <div class="gallerycontainer">
-      <div class="gallery_images">
-        <img src="" />
-
-        <h1>This is a gallery from Pexels</h1>
-      </div>
     </div>
 
     <div id="session-button">

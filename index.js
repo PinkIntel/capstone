@@ -9,12 +9,9 @@ import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import { createClient } from "pexels";
+import axios from "axios";
 
 const router = new Navigo(window.location.origin);
-
-const client = createClient(
-  "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
-);
 
 //in the PAGE part of the router function, the colon is for the info that comes after the / symbol in your browswer bar. It's a query string to add on to the slash.
 
@@ -37,28 +34,49 @@ document.querySelector(".fa-bars").addEventListener("click", () => {
   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
 });
 
-const galleryContainer = document.querySelector(".gallerycontainer");
-let pexels;
-function getPhotos(images) {
-  images.map(image => {
-    pexels = `<div class="gallery_images">
-             <img src=${image.src.original} />
-        </div>`;
-    galleryContainer.innerHTML += pexels;
-  });
+import dotenv from "dotenv";
+dotenv.config();
+
+// let response = fetch("https://api.pexels.com/v1/collections/gtwusmq/", {
+//   headers: {
+//     Authorization: "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
+//   }
+// }).then(resp => {
+//   return resp.json();
+// });
+function getGallery() {
+  axios
+    .get(
+      "https://api.pexels.com/v1/collections/gtwusmq/?appid=${process.env.563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0}",
+      {
+        headers: {
+          Authorization:
+            "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
+        }
+      }
+    )
+    .then(response => {
+      let result = response.data.media;
+
+      result.map(image => {
+        let newPhoto = document.createElement("img");
+        newPhoto.setAttribute("src", `${image.src.large2x}`);
+        document.querySelector(".galleryContainer").appendChild(newPhoto);
+      });
+    });
 }
 
-fetch("https://api.pexels.com/v1/collections/gtwusmq/", {
-  headers: {
-    Authorization: "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
-  }
-})
-  .then(resp => {
-    return resp.json();
-  })
-  .then(data => {
-    console.log(data);
-  });
+getGallery();
+
+// function getPhotos() {
+//   response.media.map(image => {
+//     let pexels = `<div class="gallery_images">
+//              <img src=${image.src.original} />
+//         </div>`;
+//     galleryContainer.innerHTML += pexels;
+//   });
+// }
+// getPhotos();
 
 router
   .on({

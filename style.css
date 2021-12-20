@@ -236,6 +236,18 @@ nav {
     height: 500px;
 }
 
+.galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.galleryContainer img {
+    padding: 10px;
+    height: 500px;
+}
+
 #session-button {
     padding-top: 100px;
     margin-bottom: 100px;
