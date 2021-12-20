@@ -37,13 +37,6 @@ document.querySelector(".fa-bars").addEventListener("click", () => {
 import dotenv from "dotenv";
 dotenv.config();
 
-// let response = fetch("https://api.pexels.com/v1/collections/gtwusmq/", {
-//   headers: {
-//     Authorization: "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
-//   }
-// }).then(resp => {
-//   return resp.json();
-// });
 function getGallery() {
   axios
     .get("https://api.pexels.com/v1/collections/gtwusmq/", {
@@ -64,16 +57,6 @@ function getGallery() {
 }
 
 getGallery();
-
-// function getPhotos() {
-//   response.media.map(image => {
-//     let pexels = `<div class="gallery_images">
-//              <img src=${image.src.original} />
-//         </div>`;
-//     galleryContainer.innerHTML += pexels;
-//   });
-// }
-// getPhotos();
 
 router
   .on({
