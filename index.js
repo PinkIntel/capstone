@@ -10,6 +10,8 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 import { createClient } from "pexels";
 import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
 
 const router = new Navigo(window.location.origin);
 
@@ -29,13 +31,6 @@ function render(st) {
 }
 
 render(state.Home);
-
-document.querySelector(".fa-bars").addEventListener("click", () => {
-  document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-});
-
-import dotenv from "dotenv";
-dotenv.config();
 
 function getGallery() {
   axios
@@ -64,3 +59,7 @@ router
     ":page": params => render(state[capitalize(params.page)])
   })
   .resolve();
+
+document.querySelector(".fa-bars").addEventListener("click", () => {
+  document.querySelector("nav > ul").classList.toggle("hidden--mobile");
+});
