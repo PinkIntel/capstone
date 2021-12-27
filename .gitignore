@@ -4,4 +4,4 @@ dist
 node_modules
 *.sw*
 .env
-index.js
+
