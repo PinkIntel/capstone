@@ -6,6 +6,7 @@ import familyPhoto from "/assets/nathan-dumlao-4_mJ1TbMK8A-unsplash.jpg";
 import businessMan from "/assets/pexels-liliana-drew-8555509.jpg";
 import momAndSon from "/assets/paige-cody-bOVZ_f3fbQM-unsplash.jpg";
 import smallFamily from "/assets/jessica-rockowitz-6c4Uhhe68yQ-unsplash.jpeg";
+import momAndChild from "/assets/momandchild.jpg";
 
 export default () => html`
   <div id="main-content">
@@ -73,6 +74,13 @@ export default () => html`
           <img
             src="${smallFamily}"
             alt="image of a husband and wife, holding a baby"
+            height="300"
+          />
+        </li>
+        <li>
+          <img
+            src="${momAndChild}"
+            alt="image of a black woman hugging her child"
             height="300"
           />
         </li>

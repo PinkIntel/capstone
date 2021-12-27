@@ -136,7 +136,6 @@ nav {
 .about-image {
     background-image: url("/assets/nyana-stoica-MYGWB1KpwBQ-unsplash.jpg");
     background-size: cover;
-
     height: 400px;
     padding: 100px;
     background-color: white;
@@ -153,7 +152,7 @@ nav {
 }
 
 .sessions-image {
-    background-image: url("/assets/yuri-tasso-RjCs9ywcnz8-unsplash.jpeg");
+    background-image: url("/assets/momandchild.jpg");
     background-size: cover;
     width: 100%;
     height: 400px;
@@ -162,8 +161,8 @@ nav {
     background-position-y: 40%;
 }
 
-.packages-image {
-    background-image: url("/assets/christian-ferrer-aK5Dt6L6_hQ-unsplash.jpg");
+.cart-image {
+    background-image: url("/assets/ficticiousdog.jpeg");
     background-size: cover;
     width: 100%;
     height: 400px;
@@ -419,7 +418,7 @@ footer a {
 
   @media (max-width: 400px) {
     .hidden--mobile  {
-
+    z-index: 600;
     }
 
     .hidden--mobile li {
@@ -542,10 +541,15 @@ footer a {
     .gallery img {
         width: 100%;
         height: 100%;
+        padding: 0;
     }
 
     .gallery li {
         margin: 10px 0px 10px 0px;
+    }
+
+    .galleryContainer img {
+        padding: 10px;
     }
 
     #about-main {
