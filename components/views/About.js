@@ -41,8 +41,7 @@ export default () => html`
         </li>
         <li>
           <h3>
-            Aaron Carpenter (aka CC), Co-CEO of WP, Accountant, also Claire's
-            hubby.
+            Aaron Carpenter, Co-CEO of WP, Accountant, also Claire's hubby.
           </h3>
           <br />
           <p>
