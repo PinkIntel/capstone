@@ -15,7 +15,8 @@ export default () => html`
 
     <div id="session-form">
       <div id="form-elements">
-        <form action="https://formspree.io/f/xzbobrng" method="POST">
+        <!-- <form action="https://formspree.io/f/xzbobrng" method="POST"> -->
+        <form id="form" method="POST" form action="">
           <h2>Client Information</h2>
           <div>
             <label for="name">Full Name:</label>
@@ -145,7 +146,7 @@ export default () => html`
               name="trip-start"
               value="2021-01-01"
               min="2021-01-01"
-              max="2022-12-31"
+              max="2024-12-31"
             />
           </div>
 

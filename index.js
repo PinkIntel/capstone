@@ -32,6 +32,46 @@ function render(st) {
 
 render(state.Home);
 
+// console.log("view, st.view");
+if (state.view === "Booking") {
+  document.querySelector("form").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const inputList = event.target.elements;
+    console.log("Input Element List", inputList);
+
+    const form = [];
+    // Interate over the form input group elements
+    for (let input of inputList.form) {
+      // If the value of the checked attribute is true then add the value to the forms array
+      if (input.checked) {
+        form.push(input.value);
+      }
+    }
+
+    const requestData = {
+      // name: inputList.name.value,
+      // address: inputList.address.value,
+      // phone: inputList.phone.value,
+      // city: inputList.city.value,
+      // email: inputList.email.value
+    };
+    console.log("request Body", requestData);
+
+    axios
+      .post(`${process.env.CAPSTONE_FORMS_API_URL}`, requestData)
+      .then(response => {
+        // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+        state.Form.forms.push(response.data);
+        router.navigate("/Form");
+      })
+      .catch(error => {
+        console.log("OH NUUUU IT DIDN'T WORK", error);
+      });
+  });
+  addEventListeners(state);
+}
+
 function getGallery() {
   axios
     .get("https://api.pexels.com/v1/collections/gtwusmq/", {
