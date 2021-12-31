@@ -28,58 +28,68 @@ function render(st) {
   ${Footer(st)}
   `;
   router.updatePageLinks();
-  // addEventListeners(state);
+  addEventListeners(state);
 }
 
-render(state.Home);
+function addEventListeners(st) {
+  // add event listeners to Nav items for navigation
+  document.querySelectorAll("nav a").forEach(navLink =>
+    navLink.addEventListener("click", event => {
+      event.preventDefault();
+      render(state[event.target.title]);
+    })
+  );
 
-// console.log("view, st.view");
-if (state.view === "Forms") {
-  document.querySelector("form").addEventListener("submit", event => {
-    event.preventDefault();
-
-    const inputList = event.target.elements;
-    console.log("Input Element List", inputList);
-
-    const form = [];
-    // Interate over the form input group elements
-    for (let input of inputList.form) {
-      // If the value of the checked attribute is true then add the value to the forms array
-      if (input.checked) {
-        form.push(input.value);
-      }
-    }
-
-    const requestData = {
-      name: inputList.name.value,
-      phone: inputList.phone.value,
-      address: inputList.address.value,
-      city: inputList.city.value,
-      state: inputList.state.value,
-      zipcode: inputList.zipcode.value,
-      email: inputList.email.value,
-      sessiontype: inputList.sessiontype.value,
-      starttime: inputList.starttime.value,
-      endtime: inputList.endtime.value,
-      people: inputList.people.value,
-      theme: inputList.theme.value,
-      package: inputList.package.value,
-      addons: inputList.addons.value,
-      details: inputList.details.value
-    };
-    console.log("request Body", requestData);
-
-    axios
-      .post(`${process.env.CAPSTONE_FORMS_API_URL}`, requestData)
-      .then(response => {
-        // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-        state.Form.forms.push(response.data);
-        router.navigate("/Form");
-      })
-      .catch(error => {
-        console.log("OH NU IT DIDN'T WORK", error);
-      });
+  document.querySelector(".fa-bars").addEventListener("click", () => {
+    document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+  if (state.view === "Forms") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const form = [];
+      // Interate over the form input group elements
+      for (let input of inputList.form) {
+        // If the value of the checked attribute is true then add the value to the forms array
+        if (input.checked) {
+          form.push(input.value);
+        }
+      }
+
+      const requestData = {
+        name: inputList.name.value,
+        phone: inputList.phone.value,
+        address: inputList.address.value,
+        city: inputList.city.value,
+        state: inputList.state.value,
+        zipcode: inputList.zipcode.value,
+        email: inputList.email.value,
+        sessiontype: inputList.sessiontype.value,
+        starttime: inputList.starttime.value,
+        endtime: inputList.endtime.value,
+        people: inputList.people.value,
+        theme: inputList.theme.value,
+        package: inputList.package.value,
+        addons: inputList.addons.value,
+        details: inputList.details.value
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.CAPSTONE_FORMS_API_URL}`, requestData)
+        .then(response => {
+          // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          state.Form.forms.push(response.data);
+          router.navigate("/Form");
+        })
+        .catch(error => {
+          console.log("OH NU IT DIDN'T WORK", error);
+        });
+    });
+  }
 }
 
 function getGallery() {
@@ -109,7 +119,3 @@ router
     ":page": params => render(state[capitalize(params.page)])
   })
   .resolve();
-
-document.querySelector(".fa-bars").addEventListener("click", () => {
-  document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-});

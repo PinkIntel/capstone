@@ -48,7 +48,7 @@ router.put("/:id", (request, response) => {
     },
     (error, data) => {
       if (error) return response.sendStatus(500).json(error);
-      return response.json(req.body);
+      return response.json(data);
     }
   );
 });
