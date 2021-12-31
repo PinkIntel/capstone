@@ -15,7 +15,6 @@ export default () => html`
 
     <div id="session-form">
       <div id="form-elements">
-        <!-- <form action="https://formspree.io/f/xzbobrng" method="POST"> -->
         <form id="form" method="POST" form action="">
           <h2>Client Information</h2>
           <div>
@@ -207,7 +206,12 @@ export default () => html`
 
             <textarea name="msg" id="msg" cols="50" rows="10"></textarea>
           </div>
-
+          <input
+            type="hidden"
+            name="customer"
+            id="customer"
+            value="<Your Name>"
+          />
           <input type="submit" value="Submit Form" />
         </form>
       </div>
@@ -216,3 +220,5 @@ export default () => html`
 
   <hr />
 `;
+
+// <!-- <form action="https://formspree.io/f/xzbobrng" method="POST"> -->

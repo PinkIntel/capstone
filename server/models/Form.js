@@ -6,17 +6,17 @@ const formSchema = new mongoose.Schema({
   address: String,
   city: String,
   state: String,
-  zipCode: String,
+  zipcode: String,
   email: String,
-  sessionInfo: String,
+  sessiontype: String,
   date: String,
-  startTime: String,
-  endTime: String,
-  numberOfPeople: String,
+  starttime: String,
+  endtime: String,
+  people: String,
   theme: String,
-  packageType: String,
-  addOns: String,
-  specialWishes: String
+  package: String,
+  addons: String,
+  details: String
 });
 
 const Form = mongoose.model("Form", formSchema);

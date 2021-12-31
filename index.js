@@ -28,12 +28,13 @@ function render(st) {
   ${Footer(st)}
   `;
   router.updatePageLinks();
+  // addEventListeners(state);
 }
 
 render(state.Home);
 
 // console.log("view, st.view");
-if (state.view === "Booking") {
+if (state.view === "Forms") {
   document.querySelector("form").addEventListener("submit", event => {
     event.preventDefault();
 
@@ -50,11 +51,21 @@ if (state.view === "Booking") {
     }
 
     const requestData = {
-      // name: inputList.name.value,
-      // address: inputList.address.value,
-      // phone: inputList.phone.value,
-      // city: inputList.city.value,
-      // email: inputList.email.value
+      name: inputList.name.value,
+      phone: inputList.phone.value,
+      address: inputList.address.value,
+      city: inputList.city.value,
+      state: inputList.state.value,
+      zipcode: inputList.zipcode.value,
+      email: inputList.email.value,
+      sessiontype: inputList.sessiontype.value,
+      starttime: inputList.starttime.value,
+      endtime: inputList.endtime.value,
+      people: inputList.people.value,
+      theme: inputList.theme.value,
+      package: inputList.package.value,
+      addons: inputList.addons.value,
+      details: inputList.details.value
     };
     console.log("request Body", requestData);
 
@@ -66,10 +77,9 @@ if (state.view === "Booking") {
         router.navigate("/Form");
       })
       .catch(error => {
-        console.log("OH NUUUU IT DIDN'T WORK", error);
+        console.log("OH NU IT DIDN'T WORK", error);
       });
   });
-  addEventListeners(state);
 }
 
 function getGallery() {
