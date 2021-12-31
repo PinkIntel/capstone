@@ -140,26 +140,26 @@ router.hooks({
   }
 });
 
-// function getGallery() {
-//   axios
-//     .get("https://api.pexels.com/v1/collections/gtwusmq/", {
-//       headers: {
-//         Authorization:
-//           "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
-//       }
-//     })
-//     .then(response => {
-//       let result = response.data.media;
+function getGallery() {
+  axios
+    .get("https://api.pexels.com/v1/collections/gtwusmq/", {
+      headers: {
+        Authorization:
+          "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
+      }
+    })
+    .then(response => {
+      let result = response.data.media;
 
-//       result.map(image => {
-//         let newPhoto = document.createElement("img");
-//         newPhoto.setAttribute("src", `${image.src.large2x}`);
-//         document.querySelector(".galleryContainer").append(newPhoto);
-//       });
-//     });
-// }
+      result.map(image => {
+        let newPhoto = document.createElement("img");
+        newPhoto.setAttribute("src", `${image.src.large2x}`);
+        document.querySelector(".galleryContainer").append(newPhoto);
+      });
+    });
+}
 
-// getGallery();
+getGallery();
 
 router
   .on({
