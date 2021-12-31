@@ -5,8 +5,10 @@ const router = Router();
 //create record on mongoDB
 router.post("/", (request, response) => {
   const newForm = new form.model(request.body);
-  newForm.save((err, form) => {
-    return err ? response.sendStatus(500).json(err) : response.json(form);
+  newForm.save((error, form) => {
+    // return err ? response.sendStatus(500).json(err) : response.json(form);
+    if (error) return response.sendStatus(500).json(error);
+    return response.json(form);
   });
 });
 

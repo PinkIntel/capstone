@@ -1,10 +1,11 @@
+/* eslint-disable no-prototype-builtins */
 // window.alert("Hello! I'm working!");
 
 // importing all as a Module object
 //import * as components from "./components";
 
 // importing all FUNCTIONAL components by name
-import { Nav, Main, Footer } from "./components";
+import { Header, Nav, Main, Footer } from "./components";
 import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
@@ -23,14 +24,18 @@ const router = new Navigo(window.location.origin);
 
 function render(st) {
   document.querySelector("#root").innerHTML = `
+  ${Header(st)}
   ${Nav(state.Links)}
   ${Main(st)}
   ${Footer(st)}
   `;
   router.updatePageLinks();
-  addEventListeners(state);
+  addEventListeners(st);
 }
 
+// render(state.Home);
+
+// console.log("view, st.view");
 function addEventListeners(st) {
   // add event listeners to Nav items for navigation
   document.querySelectorAll("nav a").forEach(navLink =>
@@ -43,21 +48,22 @@ function addEventListeners(st) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
-  if (state.view === "Forms") {
+
+  if (st.view === "Forms") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
 
       const inputList = event.target.elements;
       console.log("Input Element List", inputList);
 
-      const form = [];
-      // Interate over the form input group elements
-      for (let input of inputList.form) {
-        // If the value of the checked attribute is true then add the value to the forms array
-        if (input.checked) {
-          form.push(input.value);
-        }
-      }
+      // const form = [];
+      // // Interate over the form input group elements
+      // for (let input of inputList.form) {
+      //   // If the value of the checked attribute is true then add the value to the forms array
+      //   if (input.checked) {
+      //     form.push(input.value);
+      //   }
+      // }
 
       const requestData = {
         name: inputList.name.value,
@@ -82,8 +88,8 @@ function addEventListeners(st) {
         .post(`${process.env.CAPSTONE_FORMS_API_URL}`, requestData)
         .then(response => {
           // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-          state.Form.forms.push(response.data);
-          router.navigate("/Form");
+          state.Sessions.sessions.push(response.data);
+          router.navigate("/Sessions");
         })
         .catch(error => {
           console.log("OH NU IT DIDN'T WORK", error);
@@ -91,27 +97,69 @@ function addEventListeners(st) {
     });
   }
 }
+router.hooks({
+  before: (done, params) => {
+    const page =
+      params && params.hasOwnProperty("page")
+        ? capitalize(params.page)
+        : "Home";
 
-function getGallery() {
-  axios
-    .get("https://api.pexels.com/v1/collections/gtwusmq/", {
-      headers: {
-        Authorization:
-          "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
-      }
-    })
-    .then(response => {
-      let result = response.data.media;
+    if (page === "Home") {
+      axios
+        .get("https://api.pexels.com/v1/collections/gtwusmq/", {
+          headers: {
+            Authorization:
+              "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
+          }
+        })
+        .then(response => {
+          let result = response.data.media;
 
-      result.map(image => {
-        let newPhoto = document.createElement("img");
-        newPhoto.setAttribute("src", `${image.src.large2x}`);
-        document.querySelector(".galleryContainer").appendChild(newPhoto);
-      });
-    });
-}
+          result.map(image => {
+            let newPhoto = document.createElement("img");
+            newPhoto.setAttribute("src", `${image.src.large2x}`);
+            // document.querySelector(".galleryContainer").appendChild(newPhoto);
+            done();
+          });
+        });
+    }
 
-getGallery();
+    if (page === "Sessions") {
+      axios
+        .get(`${process.env.CAPSTONE_FORMS_API_URL}`)
+        .then(response => {
+          // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          state.Sessions.sessions = response.data;
+          done();
+          // router.navigate("/Forms");
+        })
+        .catch(error => {
+          console.log("OH NU IT DIDN'T WORK", error);
+        });
+    }
+  }
+});
+
+// function getGallery() {
+//   axios
+//     .get("https://api.pexels.com/v1/collections/gtwusmq/", {
+//       headers: {
+//         Authorization:
+//           "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
+//       }
+//     })
+//     .then(response => {
+//       let result = response.data.media;
+
+//       result.map(image => {
+//         let newPhoto = document.createElement("img");
+//         newPhoto.setAttribute("src", `${image.src.large2x}`);
+//         document.querySelector(".galleryContainer").append(newPhoto);
+//       });
+//     });
+// }
+
+// getGallery();
 
 router
   .on({

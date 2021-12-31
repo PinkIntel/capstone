@@ -8,6 +8,10 @@ html, body {
 
 }
 
+h1 {
+    display: none;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

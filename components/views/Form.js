@@ -106,7 +106,7 @@ export default () => html`
 
           <div>
             <label for="name">Postal/Zip Code:</label>
-            <input type="text" name="zip" id="zip" placeholder="00000" />
+            <input type="text" name="zipcode" id="zip" placeholder="00000" />
           </div>
 
           <div>
@@ -151,22 +151,17 @@ export default () => html`
 
           <div>
             <label for="Session Time">Start Time:</label>
-            <input type="time" id="time" name="time" />
+            <input type="time" id="time" name="starttime" />
           </div>
 
           <div>
             <label for="Session Time">End Time:</label>
-            <input type="time" id="time" name="time" />
+            <input type="time" id="time" name="endtime" />
           </div>
 
           <div>
             <label for="numberofpeople">Number of People:</label>
-            <input
-              type="text"
-              name="number of people"
-              id="numberofpeople"
-              size="10"
-            />
+            <input type="text" name="people" id="numberofpeople" size="10" />
           </div>
 
           <div>
@@ -204,15 +199,10 @@ export default () => html`
             <label for="msg">Additional Details/Special Wishes:</label>
             <br />
 
-            <textarea name="msg" id="msg" cols="50" rows="10"></textarea>
+            <textarea name="details" id="msg" cols="50" rows="10"></textarea>
           </div>
-          <input
-            type="hidden"
-            name="customer"
-            id="customer"
-            value="<Your Name>"
-          />
-          <input type="submit" value="Submit Form" />
+          <input type="hidden" name="customer" id="customer" value="Michael" />
+          <input type="submit" name="submit" value="Submit Form" />
         </form>
       </div>
     </div>

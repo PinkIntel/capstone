@@ -1,8 +1,8 @@
 export default [
   { title: "Home", text: "HOME" },
   { title: "About", text: "ABOUT" },
-  { title: "Sessions", text: "SESSIONS" },
-  { title: "Forms", text: "BOOK A SESSION" },
+  { title: "Forms", text: "BOOKING FORM" },
+  { title: "Sessions", text: "SESSIONS LIST" },
   { title: "Contact", text: "CONTACT" },
   { title: "Cart", text: "SHOPPING CART" }
 ];

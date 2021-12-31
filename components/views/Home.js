@@ -84,13 +84,13 @@ export default () => html`
             height="300"
           />
         </li>
-        <li><div class="galleryContainer"></div></li>
+        <!-- <li><div class="galleryContainer"></div></li> -->
       </ul>
     </div>
 
     <div id="session-button">
       <h4>INTERESTED IN HIRING US?</h4>
-      <a href="/Booking"><p>BOOK A SESSION</p></a>
+      <a href="/Forms"><p>BOOK A SESSION</p></a>
     </div>
   </div>
 
