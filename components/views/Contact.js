@@ -4,7 +4,9 @@ export default () => html`
    <div id="main content">
         <div class="contactus-image">
         </div>
-
+        <div class="pageheader">
+    <h2>CONTACT US</h2>
+  </div>
 
         <div class="main">
             <h1>Contact Us</h1>

@@ -5,7 +5,9 @@ export default () => html`
     <div class="booksession-image">
       <!-- <img src="../images/nathan-dumlao-bhPJ7-AdgFE-unsplash.jpeg" alt="image of a woman holding a baby, standing in a field of tall grass and trees, and mountains in the background"> -->
     </div>
-
+    <div class="pageheader">
+      <h2>BOOK AN APPOINTMENT</h2>
+    </div>
     <div class="main">
       <h1>Ready to book your session?</h1>
       <h4>

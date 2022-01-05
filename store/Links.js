@@ -1,7 +1,7 @@
 export default [
   { title: "Home", text: "HOME" },
-  { title: "About", text: "ABOUT" },
-  { title: "Forms", text: "BOOKING" },
+  { title: "About", text: "MEET THE TEAM" },
+  { title: "Forms", text: "BOOK AN APPOINTMENT" },
   { title: "Sessions", text: "SESSIONS LIST" },
   { title: "Contact", text: "CONTACT" },
   { title: "Cart", text: "SHOPPING CART" }

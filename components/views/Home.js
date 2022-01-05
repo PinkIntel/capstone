@@ -14,8 +14,10 @@ export default () => html`
       <!-- <img src="../images/nathan-dumlao-bhPJ7-AdgFE-unsplash.jpeg" alt="image of a woman holding a baby, standing in a field of tall grass and trees, and mountains in the background"> -->
     </div>
 
+    <div class="pageheader">
+      <h2>WHO WE ARE</h2>
+    </div>
     <div class="main">
-      <h1>WELCOME!</h1>
       <p>
         The Wandering Photographer is a photography group that travels to you,
         the client. We believe that you, our client, don't have to go through
@@ -25,7 +27,7 @@ export default () => html`
       </p>
     </div>
 
-    <div class="gallerysection">
+    <div class="pageheader">
       <h2>GALLERY</h2>
     </div>
 

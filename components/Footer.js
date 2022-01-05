@@ -11,7 +11,7 @@ export default st => `
       <div class="footer-left">
 
       <p>
-          <br>Capstone by Julliette Huynh &copy; 2021
+          <br>Capstone by Julliette H. &copy; 2021
           <br>The Wandering Photographer
           <br> 1234 Creative Ave.
           <br>Sunnyville, CA 90210
