@@ -30,9 +30,9 @@ export default st => `
 
       <div class="footer-right">
           <ul>
-              <li><img src="${facebookIcon}" alt="facebook button"></li>
-              <li><img src="${instagramIcon}" alt="instagram button"></li>
-              <li><img src="${twitterIcon}" alt="twitter button"></li>
+              <li><a href="https://www.facebook.com/" target="_blank"><img src="${facebookIcon}" alt="facebook button"></a></li>
+              <li><a href="https://www.instagram.com/" target="_blank"><img src="${instagramIcon}" alt="instagram button"></a></li>
+              <li><a href="https://twitter.com/" target="_blank"><img src="${twitterIcon}" alt="twitter button"></a></li>
           </ul>
       </div>
 

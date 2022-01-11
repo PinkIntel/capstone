@@ -7,6 +7,8 @@ import businessMan from "/assets/pexels-liliana-drew-8555509.jpg";
 import momAndSon from "/assets/paige-cody-bOVZ_f3fbQM-unsplash.jpg";
 import smallFamily from "/assets/jessica-rockowitz-6c4Uhhe68yQ-unsplash.jpeg";
 import momAndChild from "/assets/momandchild.jpg";
+import coupleOne from "/assets/allison-heine-_5_85Zqqsm4-unsplash.jpeg";
+import coupleTwo from "/assets/romane-van-troost-sn61a37mbUM-unsplash.jpeg";
 
 export default () => html`
   <div id="main-content">
@@ -83,6 +85,20 @@ export default () => html`
           <img
             src="${momAndChild}"
             alt="image of a black woman hugging her child"
+            height="300"
+          />
+        </li>
+        <li>
+          <img
+            src="${coupleOne}"
+            alt="image of a black couple in a rocky area, dressed in fancy clothing"
+            height="300"
+          />
+        </li>
+        <li>
+          <img
+            src="${coupleTwo}"
+            alt="image of a couple hugging in a corn field"
             height="300"
           />
         </li>
