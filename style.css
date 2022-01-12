@@ -411,13 +411,23 @@ footer {
 
 footer a {
     text-decoration: none;
+    color: #386C66;
+    transition: 0.3s;
+}
+
+footer a:visited {
+    color: #386C66;
+}
+footer a:hover {
+    color: #DDA15E;
+    transition: 0.3s;
 }
 
 .footer {
     display: flex;
-   justify-content: space-around;
-   align-items: center;
-   margin-bottom: 20px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 
