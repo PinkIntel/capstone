@@ -1,9 +1,7 @@
 /* eslint-disable no-prototype-builtins */
 // window.alert("Hello! I'm working!");
-
 // importing all as a Module object
 //import * as components from "./components";
-
 // importing all FUNCTIONAL components by name
 import { Header, Nav, Main, Footer } from "./components";
 import * as state from "./store";
@@ -47,6 +45,16 @@ function addEventListeners(st) {
 
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
+  });
+
+  document.querySelector("#session-button").addEventListener("click", event => {
+    event.preventDefault();
+    render(state.Forms);
+  });
+
+  document.querySelector("#logo").addEventListener("click", event => {
+    event.preventDefault();
+    render(state.Home);
   });
 
   if (st.view === "Forms") {

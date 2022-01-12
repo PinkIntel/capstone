@@ -8,10 +8,12 @@ export default Links => `
     <div class="navigation">
         <nav>
             <div id="responsive-logo">
-                <a href="./Home"><img src="${logoIcon}" alt="wandering photographer logo (icon only)"></a>
+                <a href="/Home" data-navigo><img src="${logoIcon}" alt="wandering photographer logo (icon only)">
+                </a>
             </div>
-            <div id ="logo">
-            <a href="./Home"><img src="${mainLogo}" alt="wandering photographer logo"></a>
+            <div id="logo">
+                <a href="/Home" data-navigo><img src="${mainLogo}" alt="wandering photographer logo">
+                </a>
             </div>
             <i class="fas fa-bars"></i>
             <ul class="hidden--mobile">

@@ -20,7 +20,7 @@ export default st => `
 
       <div class="footer-middle">
           <p>
-              <br><a href="https://julliettehuynh.myportfolio.com" target="_blank">Check out my portfolio!</a>
+             <a href="https://julliettehuynh.myportfolio.com" target="_blank">Check out my portfolio!</a>
               <br><a href="https://fontawesome.com/v5.15/icons/bars?style=solid" target="_blank">Hamburger icon</a>
               <br><a href="https://www.pexels.com/api/" target="_blank">API Photos provided by Pexels</a>
               <br><a href="https://www.unsplash.com/" target="_blank">Other photos provided by Unsplash</a>

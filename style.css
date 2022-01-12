@@ -603,7 +603,13 @@ footer a:hover {
         margin: 10px;
     }
 
+    .footer {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
+
+}
 
 
 /*for width smaller than 400px*/
@@ -782,8 +788,6 @@ footer a:hover {
         display: flex;
         flex-direction: column;
         text-align: center;
-
-
     }
 
     #servicebox {

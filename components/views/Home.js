@@ -108,9 +108,7 @@ export default () => html`
 
     <div id="session-button">
       <h4>INTERESTED IN HIRING US?</h4>
-      <a href="https://wanderingphotographer.netlify.app/Forms" target="_blank"
-        ><p>BOOK A SESSION</p></a
-      >
+      <a href="/Forms" data-navigo><p>BOOK AN APPOINTMENT</p></a>
     </div>
   </div>
 
