@@ -311,6 +311,17 @@ nav {
     text-decoration: none;
 }
 
+.team-member h2 {
+    margin: 0;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.team-member h3 {
+    margin-top: 10px;
+    color: #4e827c;
+}
+
 .serviceslist {
     display: flex;
     flex-wrap: wrap;
@@ -707,7 +718,6 @@ footer a:hover {
 
     .gallerysection h2{
         padding: 50px;
-
     }
 
     .gallery {
