@@ -35,7 +35,7 @@ function getGallery() {
   console.log(state.Home.gallery);
   let gallery = state.Home.gallery;
   gallery.map(image => {
-    console.log("hi");
+    // console.log("hi");
     let newPhoto = document.createElement("img");
     newPhoto.setAttribute("src", `${image.src.large2x}`);
     document.querySelector(".galleryContainer").appendChild(newPhoto);
@@ -172,19 +172,19 @@ router.hooks({
     //     });
     // }
 
-    //   if (page === "Sessions") {
-    //     axios
-    //       .get(`${process.env.CAPSTONE_FORMS_API_URL}`)
-    //       .then(response => {
-    //         // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-    //         state.Sessions.sessions = response.data;
-    //         done();
-    //         // router.navigate("/Forms");
-    //       })
-    //       .catch(error => {
-    //         console.log("OH NU IT DIDN'T WORK", error);
-    //       });
-    //   }
+    if (page === "Sessions") {
+      axios
+        .get(`${process.env.CAPSTONE_FORMS_API_URL}`)
+        .then(response => {
+          // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          state.Sessions.sessions = response.data;
+          done();
+          // router.navigate("/Forms");
+        })
+        .catch(error => {
+          console.log("OH NU IT DIDN'T WORK", error);
+        });
+    }
   }
 });
 
