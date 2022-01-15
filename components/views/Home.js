@@ -102,7 +102,7 @@ export default () => html`
             height="300"
           />
         </li>
-        <!-- <li><div class="galleryContainer"></div></li> -->
+        <li><div class="galleryContainer"></div></li>
       </ul>
     </div>
 

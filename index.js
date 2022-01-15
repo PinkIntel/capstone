@@ -20,19 +20,27 @@ const router = new Navigo(window.location.origin);
 //inside the function, query the DOM for the root <div> and set its innerHTML property to a template literal.
 //Inside the template literal, call each of the functional components in the order you want them to appear on the page
 
-function render(st) {
+function render(st = state.Home) {
   document.querySelector("#root").innerHTML = `
-  ${Header(st)}
-  ${Nav(state.Links)}
-  ${Main(st)}
-  ${Footer(st)}
-  `;
+    ${Header(st)}
+    ${Nav(state.Links)}
+    ${Main(st)}
+    ${Footer(st)}
+    `;
   router.updatePageLinks();
   addEventListeners(st);
 }
-
 // render(state.Home);
-
+function getGallery() {
+  console.log(state.Home.gallery);
+  let gallery = state.Home.gallery;
+  gallery.map(image => {
+    console.log("hi");
+    let newPhoto = document.createElement("img");
+    newPhoto.setAttribute("src", `${image.src.large2x}`);
+    document.querySelector(".galleryContainer").appendChild(newPhoto);
+  });
+}
 // console.log("view, st.view");
 function addEventListeners(st) {
   // add event listeners to Nav items for navigation
@@ -56,6 +64,10 @@ function addEventListeners(st) {
     event.preventDefault();
     render(state.Home);
   });
+
+  if (st.view === "Home") {
+    getGallery();
+  }
 
   if (st.view === "Forms") {
     document.querySelector("form").addEventListener("submit", event => {
@@ -111,63 +123,70 @@ router.hooks({
       params && params.hasOwnProperty("page")
         ? capitalize(params.page)
         : "Home";
-
-    if (page === "Home") {
-      axios
-        .get("https://api.pexels.com/v1/collections/gtwusmq/", {
-          headers: {
-            Authorization:
-              "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
-          }
-        })
-        .then(response => {
-          let result = response.data.media;
-
-          result.map(image => {
-            let newPhoto = document.createElement("img");
-            newPhoto.setAttribute("src", `${image.src.large2x}`);
-            // document.querySelector(".galleryContainer").appendChild(newPhoto);
+    switch (page) {
+      case "Home":
+        axios
+          .get("https://api.pexels.com/v1/collections/gtwusmq/", {
+            headers: {
+              Authorization:
+                "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
+            }
+          })
+          .then(response => {
+            let result = response.data.media;
+            state.Home.gallery = result;
+            console.log(state.Home.gallery);
             done();
           });
-        });
-    }
+        break;
+      case "Sessions":
+        axios
+          .get(`${process.env.CAPSTONE_FORMS_API_URL}`)
+          .then(response => {
+            // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+            state.Sessions.sessions = response.data;
+            done();
+            // router.navigate("/Forms");
+          })
+          .catch(error => {
+            console.log("OH NU IT DIDN'T WORK", error);
+          });
+        break;
 
-    if (page === "Sessions") {
-      axios
-        .get(`${process.env.CAPSTONE_FORMS_API_URL}`)
-        .then(response => {
-          // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-          state.Sessions.sessions = response.data;
-          done();
-          // router.navigate("/Forms");
-        })
-        .catch(error => {
-          console.log("OH NU IT DIDN'T WORK", error);
-        });
+      default:
+        done();
     }
+    // if (page === "Home") {
+    //   axios
+    //     .get("https://api.pexels.com/v1/collections/gtwusmq/", {
+    //       headers: {
+    //         Authorization:
+    //           "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
+    //       }
+    //     })
+    //     .then(response => {
+    //       console.log("axios thingy");
+    //       let result = response.data.media;
+    //       state.Home.gallery = result;
+    //       console.log(state.Home.gallery);
+    //     });
+    // }
+
+    //   if (page === "Sessions") {
+    //     axios
+    //       .get(`${process.env.CAPSTONE_FORMS_API_URL}`)
+    //       .then(response => {
+    //         // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+    //         state.Sessions.sessions = response.data;
+    //         done();
+    //         // router.navigate("/Forms");
+    //       })
+    //       .catch(error => {
+    //         console.log("OH NU IT DIDN'T WORK", error);
+    //       });
+    //   }
   }
 });
-
-function getGallery() {
-  axios
-    .get("https://api.pexels.com/v1/collections/gtwusmq/", {
-      headers: {
-        Authorization:
-          "563492ad6f9170000100000196112a16e0864873bea10bedd5ff8bf0"
-      }
-    })
-    .then(response => {
-      let result = response.data.media;
-
-      result.map(image => {
-        let newPhoto = document.createElement("img");
-        newPhoto.setAttribute("src", `${image.src.large2x}`);
-        document.querySelector(".galleryContainer").append(newPhoto);
-      });
-    });
-}
-
-getGallery();
 
 router
   .on({
